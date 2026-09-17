@@ -7,7 +7,7 @@ const url = require('url');
 
 const BASE_URL = 'https://akunlama.com/api';
 const DOMAIN = 'akunlama.com';
-const CREATOR = 'Lann';
+const CREATOR = 'AIXI CODEX';
 
 // Styling untuk Claude Code UI (HANYA untuk border, prompt, dan status dot)
 // TIDAK PERNAH disuntikkan ke dalam string JSON agar JSON tetap valid & murni
