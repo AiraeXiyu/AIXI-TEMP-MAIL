@@ -642,7 +642,7 @@ function createStreamResponse(username, searchParams) {
 }
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     if (request.method === 'OPTIONS') {
       return optionsResponse();
     }
@@ -655,8 +655,16 @@ export default {
     }
 
     try {
-      return await handleApi(request);
-    } catch (err) {
+  const url = new URL(request.url);
+
+  // API tetap menggunakan Worker
+  if (url.pathname.startsWith('/api')) {
+    return await handleApi(request);
+  }
+
+  // Selain /api → tampilkan website dari /public
+  return await env.ASSETS.fetch(request);
+} catch (err) {
       return jsonResponse(
         error(err instanceof Error ? err.message : String(err)),
         500
