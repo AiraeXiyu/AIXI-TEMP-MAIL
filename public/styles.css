@@ -433,7 +433,8 @@ nav a:hover{
   font-size:58px;
 }
 
-.base-url{
+.base-url,
+.direct-url{
   margin-top:18px;
   padding:14px 16px;
   border:1px solid var(--line);
@@ -441,23 +442,13 @@ nav a:hover{
   background:rgba(8,9,14,.65);
 }
 
-.base-url-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:7px;
-}
-
-.base-url small{
+.base-url small,
+.direct-url small{
   display:block;
   color:#777985;
   font-size:8px;
   letter-spacing:.16em;
-}
-
-.base-copy{
-  flex-shrink:0;
+  margin-bottom:7px;
 }
 
 code{
@@ -524,29 +515,11 @@ code{
   background:#2a1b20;
 }
 
-/* =========================================================
-   ENDPOINT ACTIONS
-   Semua tombol dibuat sejajar dari kiri.
-========================================================= */
-
 .endpoint-actions{
   display:flex;
   align-items:center;
-  justify-content:flex-start;
   gap:8px;
   flex-wrap:nowrap;
-  width:100%;
-  overflow-x:auto;
-  overflow-y:hidden;
-  scrollbar-width:none;
-}
-
-.endpoint-actions::-webkit-scrollbar{
-  display:none;
-}
-
-.endpoint-actions > button{
-  flex:0 0 auto;
 }
 
 .endpoint-btn,
@@ -1974,18 +1947,6 @@ hr{
   .try-url .smallbtn{
     width:100%;
   }
-
-  /*
-   * Tombol endpoint tetap satu baris.
-   * Kalau layar HP terlalu sempit,
-   * bisa digeser horizontal tanpa mengubah
-   * posisi atau ukuran tombol.
-   */
-  .endpoint-actions{
-    flex-wrap:nowrap;
-    justify-content:flex-start;
-    overflow-x:auto;
-  }
 }
 
 @media(max-width:390px){
@@ -2005,4 +1966,4 @@ hr{
   .hero h1{
     font-size:39px;
   }
-}
+    }
