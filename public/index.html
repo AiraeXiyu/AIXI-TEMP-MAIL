@@ -1,1 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1d33">
+  <meta name="description" content="AIXI TEMP MAIL Public REST API Documentation">
+  <title>AIXI TEMP MAIL · REST API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="hero-inner">
+        <div class="eyebrow">AIXI CODEX · API SYSTEM</div>
+        <h1>AIXI TEMP MAIL</h1>
+        <p>Public REST API Documentation</p>
+        <div class="hero-meta">
+          <span>REST API</span>
+          <span>·</span>
+          <span>6 ENDPOINTS</span>
+          <span>·</span>
+          <span>GET</span>
+        </div>
+      </div>
+    </section>
 
+    <section class="base-card card">
+      <div class="pill">BASE URL</div>
+      <h2>ENDPOINT</h2>
+      <div class="url-box">
+        <code id="baseUrl">Loading...</code>
+        <button class="dark-action" id="copyBase">COPY</button>
+      </div>
+      <button class="primary-action" id="copyBaseLarge">COPY BASE URL</button>
+    </section>
+
+    <section class="intro card">
+      <div class="pill gold-pill">ABOUT</div>
+      <h2>Akunlama REST API by AIXI CODEX</h2>
+      <p>Generate disposable email addresses, inspect inboxes, read messages, dump all messages, and listen for new messages through SSE.</p>
+    </section>
+
+    <section class="endpoint-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow dark-eyebrow">DOCUMENTATION</div>
+          <h2>ENDPOINTS</h2>
+        </div>
+        <span class="count-badge">6 ROUTES</span>
+      </div>
+      <div id="endpointList"></div>
+    </section>
+
+    <footer>
+      <strong>AIXI CODEX</strong>
+      <span>·</span>
+      <span>AIXI TEMP MAIL REST API</span>
+    </footer>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-top">
+        <span class="method" id="modalMethod">GET</span>
+        <div>
+          <div class="eyebrow dark-eyebrow">EXECUTE ENDPOINT</div>
+          <h2 id="modalTitle">/api/gen</h2>
+        </div>
+      </div>
+
+      <div class="modal-url-row">
+        <code id="modalUrl"></code>
+        <button class="small-action" id="copyModalUrl">COPY URL</button>
+      </div>
+
+      <div class="request-type" id="requestType">NO PARAMETERS</div>
+      <div id="requestFields"></div>
+
+      <div class="example-panel" id="modalExamplePanel">
+        <div class="example-head"><span>REQUEST EXAMPLE</span><button class="small-action" id="copyModalExample">COPY</button></div>
+        <pre id="modalExample"></pre>
+      </div>
+
+      <div class="modal-actions">
+        <button class="primary-action" id="executeBtn">EXECUTE</button>
+        <button class="secondary-action" id="copyCurl">COPY CURL</button>
+      </div>
+
+      <div class="status" id="modalStatus"></div>
+      <div class="response-title">RESPONSE</div>
+      <pre class="response-box" id="modalResponse">Response will appear here…</pre>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
